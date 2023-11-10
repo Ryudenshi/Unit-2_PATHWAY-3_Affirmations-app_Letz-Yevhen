@@ -3,6 +3,7 @@ package com.example.unit2_pathway3_affirmationsapp_letzyevhen.adapter
 import android.content.Context
 import android.view.View
 import android.view.ViewGroup
+import android.view.LayoutInflater
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.unit2_pathway3_affirmationsapp_letzyevhen.R
@@ -18,11 +19,14 @@ class ItemAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-        TODO("Not yet implemented")
+        val adapterLayout = LayoutInflater.from(parent.context)
+            .inflate(R.layout.list_item, parent, false)
+
+        return ItemViewHolder(adapterLayout)
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return dataset.size
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
